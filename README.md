@@ -5,7 +5,7 @@ The Scala REPL is a run-time interpreter, which allows you to type in statements
 When you bring up the Scala REPL for this project, all of the OpenStack APIs are available for experimentation.
 The project also contains the OpenStack Examples.
 
-You can play with the project code base, or just the OpenStack libraries by using the Scala REPL (a command-line interpreter), like this:
+You can play with the project code base, or just the OpenStack libraries by using the Scala REPL like this:
 
 <pre>
 $ <b>sbt console</a>
