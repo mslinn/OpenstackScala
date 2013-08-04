@@ -2,7 +2,7 @@
 
 I used the Java bindings for OpenStack to create a Scala project that could serve as the basis for experimentation.
 The Scala REPL is a run-time interpreter, which allows you to type in statements and have them execute.
-When you bring up the Scala REPL for this project, all of the OpenStack APIs are available for experimentation
+When you bring up the Scala REPL for this project, all of the OpenStack APIs are available for experimentation.
 
 You can play with the project code base, or just the OpenStack libraries by using the Scala REPL (a command-line interpreter), like this:
 
