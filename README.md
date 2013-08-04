@@ -14,6 +14,21 @@ $ <b>sbt console</a>
 [info] Set current project to SBT CloudDrive (in build file:/home/mslinn/work/experiments/openstack/)
 [info] Starting scala interpreter...
 [info]
+import com.woorea.openstack.base.client._
+import com.woorea.openstack.ceilometer._
+import com.woorea.openstack.ceilometer.v2.model._
+import com.woorea.openstack.glance._
+import com.woorea.openstack.glance.model._
+import com.woorea.openstack.keystone._
+import com.woorea.openstack.keystone.model._
+import com.woorea.openstack.keystone.model.authentication._
+import com.woorea.openstack.keystone.utils._
+import com.woorea.openstack.nova._
+import com.woorea.openstack.nova.model._
+import com.woorea.openstack.quantum._
+import com.woorea.openstack.quantum.model._
+import com.woorea.openstack.swift._
+import com.woorea.openstack.swift.model._
 import com.woorea.openstack.examples._
 import com.woorea.openstack.examples.compute._
 import com.woorea.openstack.examples.glance._
@@ -23,6 +38,7 @@ import com.woorea.openstack.examples.metering.v2._
 import com.woorea.openstack.examples.network._
 import com.woorea.openstack.examples.objectstore._
 import com.woorea.openstack.examples.simple._
+import java.io._
 Welcome to Scala version 2.10.2 (Java HotSpot(TM) 64-Bit Server VM, Java 1.7.0_25).
 Type in expressions to have them evaluated.
 Type :help for more information.
@@ -33,5 +49,27 @@ scala> // Because the examples are in a jar, `sbt run` and `sbt run-main` do not
 
 scala> // ExamplesConfiguration.main(Array.empty[String])
 
+scala> // GlanceListImages.main(Array.empty[String])
+
+scala> // KeystoneAuthentication.main(Array.empty[String])
+
+scala> // KeystoneCreateTenant.main(Array.empty[String])
+
+scala> // KeystoneCreateUser.main(Array.empty[String])
+
+scala> // NovaCreateServer.main(Array.empty[String])
+
+scala> // NovaListFlavors.main(Array.empty[String])
+
+scala> // NovaListImages.main(Array.empty[String])
+
+scala> // NovaListServers.main(Array.empty[String])
+
 scala> // QuantumListNetworks.main(Array.empty[String])
+
+scala> // QuantumQueryNetworks.main(Array.empty[String])
+
+scala> // SwiftExample.main(Array.empty[String])
+
+scala> // TestAll.main(Array.empty[String])
 </pre>
