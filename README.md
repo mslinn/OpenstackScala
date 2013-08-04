@@ -3,6 +3,7 @@
 I used the Java bindings for OpenStack to create a Scala project that could serve as the basis for experimentation.
 The Scala REPL is a run-time interpreter, which allows you to type in statements and have them execute.
 When you bring up the Scala REPL for this project, all of the OpenStack APIs are available for experimentation.
+The project also contains the OpenStack Examples.
 
 You can play with the project code base, or just the OpenStack libraries by using the Scala REPL (a command-line interpreter), like this:
 
@@ -27,4 +28,10 @@ Type in expressions to have them evaluated.
 Type :help for more information.
 
 scala> <b>// Type in Scala code here and have it evaluated</b>
+
+scala> // Because the examples are in a jar, `sbt run` and `sbt run-main` do not work on the main methods in the jar, and they need to be launched this way:
+
+scala> // ExamplesConfiguration.main(Array.empty[String])
+
+scala> // QuantumListNetworks.main(Array.empty[String])
 </pre>
