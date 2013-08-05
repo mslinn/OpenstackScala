@@ -32,14 +32,5 @@ initialCommands := """
                      |import com.woorea.openstack.quantum.model._
                      |import com.woorea.openstack.swift._
                      |import com.woorea.openstack.swift.model._
-                     |import com.woorea.openstack.examples._
-                     |import com.woorea.openstack.examples.compute._
-                     |import com.woorea.openstack.examples.glance._
-                     |import com.woorea.openstack.examples.hpcloud._
-                     |import com.woorea.openstack.examples.keystone._
-                     |import com.woorea.openstack.examples.metering.v2._
-                     |import com.woorea.openstack.examples.network._
-                     |import com.woorea.openstack.examples.objectstore._
-                     |import com.woorea.openstack.examples.simple._
                      |import java.io._
                      |""".stripMargin

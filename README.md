@@ -3,12 +3,11 @@
 I used the Java bindings for OpenStack to create a Scala project that could serve as the basis for experimentation.
 The Scala REPL is a run-time interpreter, which allows you to type in statements and have them execute.
 When you bring up the Scala REPL for this project, all of the OpenStack APIs are available for experimentation.
-The project also contains the OpenStack Examples.
 
 You can play with the project code base, or just the OpenStack libraries by using the Scala REPL like this:
 
 <pre>
-$ <b>sbt console</a>
+$ <b>sbt console</b>
 [info] Loading global plugins from /home/mslinn/.sbt/plugins
 [info] Loading project definition from /home/mslinn/work/experiments/openstack/project
 [info] Set current project to SBT CloudDrive (in build file:/home/mslinn/work/experiments/openstack/)
@@ -29,47 +28,52 @@ import com.woorea.openstack.quantum._
 import com.woorea.openstack.quantum.model._
 import com.woorea.openstack.swift._
 import com.woorea.openstack.swift.model._
-import com.woorea.openstack.examples._
-import com.woorea.openstack.examples.compute._
-import com.woorea.openstack.examples.glance._
-import com.woorea.openstack.examples.hpcloud._
-import com.woorea.openstack.examples.keystone._
-import com.woorea.openstack.examples.metering.v2._
-import com.woorea.openstack.examples.network._
-import com.woorea.openstack.examples.objectstore._
-import com.woorea.openstack.examples.simple._
 import java.io._
 Welcome to Scala version 2.10.2 (Java HotSpot(TM) 64-Bit Server VM, Java 1.7.0_25).
 Type in expressions to have them evaluated.
 Type :help for more information.
 
 scala> <b>// Type in Scala code here and have it evaluated</b>
-
-scala> // Because the examples are in a jar, `sbt run` and `sbt run-main` do not work on the main methods in the jar, and they need to be launched this way:
-
-scala> // ExamplesConfiguration.main(Array.empty[String])
-
-scala> // GlanceListImages.main(Array.empty[String])
-
-scala> // KeystoneAuthentication.main(Array.empty[String])
-
-scala> // KeystoneCreateTenant.main(Array.empty[String])
-
-scala> // KeystoneCreateUser.main(Array.empty[String])
-
-scala> // NovaCreateServer.main(Array.empty[String])
-
-scala> // NovaListFlavors.main(Array.empty[String])
-
-scala> // NovaListImages.main(Array.empty[String])
-
-scala> // NovaListServers.main(Array.empty[String])
-
-scala> // QuantumListNetworks.main(Array.empty[String])
-
-scala> // QuantumQueryNetworks.main(Array.empty[String])
-
-scala> // SwiftExample.main(Array.empty[String])
-
-scala> // TestAll.main(Array.empty[String])
 </pre>
+
+This project also contains the OpenStack Examples. Run them like this:
+
+<pre>
+$ <b>sbt run</b>
+[info] Loading global plugins from /home/mslinn/.sbt/plugins
+[info] Updating {file:/home/mslinn/.sbt/plugins/}default-3a91be...
+[info] Resolving org.scala-sbt#precompiled-2_10_1;0.12.3 ...
+[info] Done updating.
+[info] Loading project definition from /home/mslinn/work/experiments/OpenstackScala/project
+[info] Set current project to OpenStack Playpen for Scala (in build file:/home/mslinn/work/experiments/OpenstackScala/)
+[info] Compiling 1 Scala source to /home/mslinn/work/experiments/OpenstackScala/target/scala-2.10/classes...
+
+Multiple main classes detected, select one to run:
+
+ [1] ExamplesConfiguration
+ [2] GlanceListImages
+ [3] KeystoneAuthentication
+ [4] KeystoneCreateTenant
+ [5] KeystoneCreateUser
+ [6] NovaCreateServer
+ [7] NovaListFlavors
+ [8] NovaListImages
+ [9] NovaListServers
+ [10] QuantumListNetworks
+ [11] QuantumQueryNetworks
+ [12] SwiftExample
+ [13] TestAll
+
+Enter number:</pre>
+
+Note that the Openstack examples have the following hard-coded configuration in `ExamplesConfiguration`:
+
+<pre>public static final String KEYSTONE_AUTH_URL = "http://identity/v2.0";
+public static final String KEYSTONE_USERNAME = "";
+public static final String KEYSTONE_PASSWORD = "";
+public static final String KEYSTONE_ENDPOINT = "http://keystone/v2.0";
+public static final String TENANT_NAME = "admin";
+public static final String NOVA_ENDPOINT = "http://compute/v2";</pre>
+
+You might want to make an entry in `/etc/hosts` or a DNS entry for `keystone` and `compute` that points to instances of those services so the example run.
+If you do not, you will get a `NullPointException` when the examples are run.
